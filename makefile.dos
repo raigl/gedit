@@ -1,0 +1,48 @@
+
+SUFFIXES=.obj .c
+
+BIN = c:\sys\utl
+REL  =  4
+VER  = 26
+CFLAGS = -mc -A -DMSDOS -DIBMBIOS
+PROFF=proff -po8
+OBJS=editm.obj editv.obj editu.obj editf.obj editl.obj edits.obj editt.obj
+
+edit.exe: $(OBJS)
+	tcc $(CFLAGS) -eedit $(OBJS)
+
+install: edit.exe
+	copy $(BIN)\ge.exe $(BIN)\oge.exe
+	copy edit.exe $(BIN)\ge.exe
+
+export: edit.doc edit.exe
+	copy *.c a:\edit
+	copy *.h  a:\edit
+	copy makefile.* a:\edit
+	exepack edit.exe a:\edit\edit.exe
+	copy edit.prf a:\edit
+	copy edit.doc a:\edit
+	del a:\edit\$$*.*
+
+arch:   edit.doc edit.exe
+	pkarc u edit$(REL)_$(VER) *.c *.h *.prf makefile
+	attrib -a *.*
+
+clean:
+	del *.obj
+	del $$*.*
+
+$(OBJS): edit.h
+
+VIEW=view
+ALTER=alter
+editv.c: makefile  # -- not yet $(OBJECTS:.o=.c)
+	echo char *relver   = " $(REL).$(VER)"; > editv.c
+	echo char *viewpgm  = "$(VIEW)"; >> editv.c
+	echo char *alterpgm = "$(ALTER)"; >> editv.c
+
+edit.doc:  edit.prf
+	$(PROFF) edit.prf edit.doc
+
+.c.obj:
+	tcc $(CFLAGS) -c $*.c

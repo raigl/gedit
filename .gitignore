@@ -1,0 +1,8 @@
+#
+*.o
+edit
+tq
+ct
+.bzr
+.bzrignore
+*+

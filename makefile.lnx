@@ -1,0 +1,68 @@
+# Makefile for the Glaschick editor
+
+BIN     =  edit
+EDIT    =  ge
+VIEW    =  gv
+ALTER   =  ga
+BBINSTDIR =  /usr/local/bin
+DOCFILE =  edit.doc
+EDBACK  =  ,*
+OBJECTS =  editm.o editu.o editf.o editl.o edits.o editt.o editv.o
+MODEL   =
+RELVER  =  4.28
+CFLAGS  =  $(MODEL) -DUNIX -DCURSES
+LDLIBS  =  -lncurses
+
+tq:     tq.c
+	cc -o tq tq.c -lcurses
+
+ct:     ct.c
+	cc -g -o ct ct.c -lcurses
+
+$(BIN): $(OBJECTS)
+	cc $(CFLAGS) -o $(BIN) $(OBJECTS) $(LDLIBS)
+
+all:    $(BIN) install doc clean
+
+install: $(BIN)
+	mv $(INSTDIR)/$(EDIT) $(INSTDIR)/$(EDIT).old
+	cp ./$(BIN) $(INSTDIR)/$(EDIT)
+	strip $(INSTDIR)/$(EDIT)
+	if test ! -x $(INSTDIR)/$(VIEW)
+	then ln $(INSTDIR)/$(BIN) $(INSTDIR)/$(VIEW); fi
+	if test ! -x $(INSTDIR)/$(ALTER)
+	then ln $(INSTDIR)/$(BIN) $(INSTDIR)/$(ALTER); fi
+
+doc:    edit.prf
+	proff edit.prf > $(DOCFILE)
+
+clean:
+	rm -f $(OBJECTS)
+	rm -f a.out
+	rm -f core
+	rm -f $(EDBACK)
+
+editv.c: makefile  # -- not yet $(OBJECTS:.o=.c)
+	echo "char *relver   = \" $(RELVER)\";" > editv.c
+	echo "char *viewpgm  = \"$(VIEW)\";" >> editv.c
+	echo "char *alterpgm = \"$(ALTER)\";" >> editv.c
+editv.o: editv.c
+	cc $(MFLAGS) $(CFLAGS) -c editv.c
+
+editm.o: editm.c edit.h
+	cc $(MFLAGS) $(CFLAGS) -c editm.c
+
+editu.o: editu.c edit.h
+	cc $(MFLAGS) $(CFLAGS) -c editu.c
+
+editf.o: editf.c edit.h
+	cc $(MFLAGS) $(CFLAGS) -c editf.c
+
+editl.o: editl.c edit.h
+	cc $(MFLAGS) $(CFLAGS) -c editl.c
+
+edits.o: edits.c edit.h
+	cc $(MFLAGS) $(CFLAGS) -c edits.c
+
+editt.o: editt.c edit.h
+	cc $(MFLAGS) $(CFLAGS) -c editt.c
