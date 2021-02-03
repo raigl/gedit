@@ -5,4 +5,5 @@ tq
 ct
 .bzr
 .bzrignore
-*+
+*~
+*.html
