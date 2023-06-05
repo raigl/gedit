@@ -25,9 +25,9 @@ $(BIN): $(OBJECTS)
 all:    $(BIN) install doc clean
 
 install: $(BIN)
-	mv $(INSTDIR)/$(EDIT) $(INSTDIR)/$(EDIT).old
-	mv $(INSTDIR)/$(VIEW) $(INSTDIR)/$(VIEW).old
-	mv $(INSTDIR)/$(ALTER) $(INSTDIR)/$(ALTER).old
+	-mv $(INSTDIR)/$(EDIT) $(INSTDIR)/$(EDIT).old
+	-mv $(INSTDIR)/$(VIEW) $(INSTDIR)/$(VIEW).old
+	-mv $(INSTDIR)/$(ALTER) $(INSTDIR)/$(ALTER).old
 	cp ./$(BIN) $(INSTDIR)/$(EDIT)
 	strip $(INSTDIR)/$(EDIT)
 	-test ! -x $(INSTDIR)/$(VIEW) && ln $(INSTDIR)/$(EDIT) $(INSTDIR)/$(VIEW)
