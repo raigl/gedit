@@ -47,7 +47,7 @@ int maxlen, taboff;
 	
 	if (p == NIL)
 	    return;
-	// TODO: treat unicode correctly
+	/*TODO: treat unicode correctly */
 	i = strlen(p);
 	if (i > maxlen)
 	    i = maxlen;
@@ -58,7 +58,7 @@ int maxlen, taboff;
 	/* ein Leerzeichen hinten dran lassen, damit DelC funkt. */
 	if (p[i] != '\0')
 	     i = min(i+1, maxlen);
-	// curses displays unicode if given as string, not as characters
+	/* curses displays unicode if given as string, not as characters */
 	q = p;
 	while ( i-- > 0 )
 	    if (*p != TAB) {
@@ -163,8 +163,8 @@ int c;
 	case KEY_F(7) : c=PlDn; break;
 	case KEY_F(8) : c=PlUp; break;
 	case KEY_F(9) : c=PrtSc; break;
-//	case KEY_F(10): c=PlDn; break;
-//	case KEY_F(11): c=ScChg; break;
+/*	case KEY_F(10): c=PlDn; break; */
+/*	case KEY_F(11): c=ScChg; break;  */
 	case KEY_F(12): c=PgHic ; break;
 	case KEY_B2   : c=PgHic; break;
 	case KEY_C1   : c=EoLn; break;

@@ -10,7 +10,7 @@ EDBACK  =  *~
 OBJECTS =  editm.o editu.o editf.o editl.o edits.o editt.o editv.o
 MODEL   =
 RELVER  =  5.4
-CFLAGS  =  $(MODEL) -DLINUX -DCURSES -g
+CFLAGS  =  -ansi $(MODEL) -DLINUX -DCURSES -g
 LDLIBS  =  -lncursesw
 
 tq:     tq.c
