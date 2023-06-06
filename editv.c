@@ -1,3 +1,3 @@
-char *relver   = " 5.4";
+char *relver   = " 5.4a";
 char *viewpgm  = "gv";
 char *alterpgm = "ga";

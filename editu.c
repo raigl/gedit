@@ -1326,7 +1326,7 @@ char *fmt;
 void *str;
 {
 	int x,y;
-	getyx(stdscr, y, x); // macro, thus no &
+	getyx(stdscr, y, x); /* macro, thus no & */
 	messg(fmt, str);
 	curpos(y, x);
 }

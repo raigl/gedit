@@ -9,8 +9,8 @@ DOCFILE =  edit.doc
 EDBACK  =  *~
 OBJECTS =  editm.o editu.o editf.o editl.o edits.o editt.o editv.o
 MODEL   =
-RELVER  =  5.4
-CFLAGS  =  $(MODEL) -DLINUX -DCURSES -g
+RELVER  =  5.4a
+CFLAGS  =  -ansi $(MODEL) -DLINUX -DCURSES -g
 LDLIBS  =  -lncursesw
 
 tq:     tq.c
@@ -25,9 +25,9 @@ $(BIN): $(OBJECTS)
 all:    $(BIN) install doc clean
 
 install: $(BIN)
-	mv $(INSTDIR)/$(EDIT) $(INSTDIR)/$(EDIT).old
-	mv $(INSTDIR)/$(VIEW) $(INSTDIR)/$(VIEW).old
-	mv $(INSTDIR)/$(ALTER) $(INSTDIR)/$(ALTER).old
+	-mv $(INSTDIR)/$(EDIT) $(INSTDIR)/$(EDIT).old
+	-mv $(INSTDIR)/$(VIEW) $(INSTDIR)/$(VIEW).old
+	-mv $(INSTDIR)/$(ALTER) $(INSTDIR)/$(ALTER).old
 	cp ./$(BIN) $(INSTDIR)/$(EDIT)
 	strip $(INSTDIR)/$(EDIT)
 	-test ! -x $(INSTDIR)/$(VIEW) && ln $(INSTDIR)/$(EDIT) $(INSTDIR)/$(VIEW)
