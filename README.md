@@ -10,6 +10,5 @@ There is a command column at the left hand side.
 
 Can be used with only one function key, e.g ESC
  
-Does not yet support typing non-ASCII-characters, 
-but displays Unicode correctly, yet uneditable.
-
+Cannot enter or edit non-ASCII 7-bit characters,
+but displays UNICODE properly, yet not editable.
