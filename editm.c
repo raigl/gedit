@@ -1,5 +1,6 @@
 /*
 editm.c   Main module for Editor
+vi: ts=4
 */
 
 #include "edit.h"
@@ -18,6 +19,7 @@ char ext[MAXEXT];
 
 char fname[FNLEN+1];    /* name of command file */
 bool inplace=FALSE, readonly;
+bool untab=FALSE;
 int tabs = 8;
 #ifdef UNIX
 #include <locale.h>
@@ -39,13 +41,20 @@ char *args;
 	while ((c = *args) != 0) {
 	    ++args;
 	    switch (tolower(c)) {
+			
 	       case '-':  /* skip (first) option char */
 			  break;
+		   /* -r: read only mode */
 	       case 'r':  readonly = TRUE;
 			  break;
+		   /* -i: edit in place, i.e. overwrite input file without backup */
 	       case 'i':  inplace  = TRUE;
 			  break;
+		   /* -t x: set tabstops each x-th column */
 	       case 't':  tabs = atoi(args);
+			  return;
+		   /* -u: untab, i.e. repace tabs by blanks */
+	       case 'u':  untab = 1;
 			  return;
 	       default:   parmerr();
 			  break;

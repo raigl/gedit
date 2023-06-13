@@ -26,7 +26,7 @@ Screen-Editor   --  MS-DOS Version
 .fi
 Der Editor liest die zu bearbeitende Datei in den Arbeitsspeicher;
 sie wird erst durch ein Kommando auf Platte gespeichert.
-Stromausfall o.„.  vernichtet also die Žnderungen seit dem
+Stromausfall o.Ã¤.  vernichtet also die Ã„nderungen seit dem
 letzten Retten (s. "save").
 .br
 Bei Ende oder Save wird die alte Datei in eine Backup-Datei
@@ -36,16 +36,16 @@ wird gewonnen, indem vor den Dateinamen ein $$ gesetzt wird.
 Aufruf durch
    edit datei.ext
 
-Der Editor schaltet auf die Bildschirm-Seite 1 und am Ende zurck auf
+Der Editor schaltet auf die Bildschirm-Seite 1 und am Ende zurÃ¼ck auf
 die Original-Seite.
 [DOS only:]
 Mit der Funktionstaste F2 kann die
-ursprngliche Seite angeschaut werden, z.B. die Fehlermeldungen
-einen Compilers. Nochmal F2 fhrt zurck in den Editor.
+ursprÃ¼ngliche Seite angeschaut werden, z.B. die Fehlermeldungen
+einen Compilers. Nochmal F2 fÃ¼hrt zurÃ¼ck in den Editor.
 
 Falls eine Hercules- oder MDA-Karte benutzt wird, ist keine zweite
 Seite vorhanden; also wird nicht umgeschaltet. Das gleiche gilt,
-wenn die Version mit ANSI-Steuerzeichen, z.B. fr PWS, benutzt wird.
+wenn die Version mit ANSI-Steuerzeichen, z.B. fÃ¼r PWS, benutzt wird.
 
 Nach dem Aufruf wird in der letzten Zeile angezeigt
 .ti 5
@@ -65,20 +65,20 @@ jeder Zeile.
 Eingefuegte Zeilen erhalten eine Doppelstrich;
 Platzhalter-Zeilen ein leichtes Punktmuster in der ersten Spalte.
 
-Auáerhalb von PC-DOS wird statt des Doppelstrichs ein Quote und
-statt des Punktmusters ein Gr”áer-Zeichen verwendent.
+AuÃŸerhalb von PC-DOS wird statt des Doppelstrichs ein Quote und
+statt des Punktmusters ein GrÃ¶ÃŸer-Zeichen verwendent.
 
 Der Cursor kann mit den vier Pfeil-Tasten im numerischen Feld frei
 bewegt werden. Dabei wird von der letzten in die erste Zeile bzw.
-Spalte gegeangen und umgekehrt. Es wird also kein Rollen durchgefhrt.
+Spalte gegeangen und umgekehrt. Es wird also kein Rollen durchgefÃ¼hrt.
 
-Die "BS"-Taste (Pfeil nach links ber der CR-Taste) macht eingegebene
-Žnderungen rckg„ngig, indem sie ein Zeichen nach links geht und
+Die "BS"-Taste (Pfeil nach links Ã¼ber der CR-Taste) macht eingegebene
+Ã„nderungen rÃ¼ckgÃ¤ngig, indem sie ein Zeichen nach links geht und
 das dortige Zeichen durch dasjenige ersetzt, was bei Betreten der
 Zeile dort stand.
 
-Die Wagen-Rcklauf-Taste ("Carriage Return") positioniert in der
-n„chsten Zeile wie folgt:
+Die Wagen-RÃ¼cklauf-Taste ("Carriage Return") positioniert in der
+nÃ¤chsten Zeile wie folgt:
 .in +3
 .ti -3
 -  auf das erste nicht-leere Zeichen, wenn es eins gibt.
@@ -101,10 +101,10 @@ Funktionstasten:
 .in 2
 .VL 3
 .LI F1
-nicht belegt, reserviert fr Help.
+nicht belegt, reserviert fÃ¼r Help.
 
 .LI F2
-Umschaltung auf MS-DOS Bildschirmseite und zurck
+Umschaltung auf MS-DOS Bildschirmseite und zurÃ¼ck
 
 .LI F3
 Sichtfenster nach rechts verschieben.
@@ -120,22 +120,22 @@ auf dem Schirm.
 Prefix-Taste zum Eingeben von Steuerzeichen.
 
 .LI F7
-Rckw„rts suchen.
+RÃ¼ckwÃ¤rts suchen.
 
 .LI F8
-Rckw„rts halb bl„ttern.
+RÃ¼ckwÃ¤rts halb blÃ¤ttern.
 
 .LI F9
-Vorw„rts suchen.
+VorwÃ¤rts suchen.
 
 .LI F10
-Vorw„rts halb bl„ttern.
+VorwÃ¤rts halb blÃ¤ttern.
 .LE
 .ne 10
 .nf
 .ce on
 .sp 3
-L”schen und Einfgen:
+LÃ¶schen und EinfÃ¼gen:
 ---------------------
 .fi
 .ce off
@@ -143,18 +143,18 @@ L”schen und Einfgen:
 Mit der "Del"-Taste wird das aktuelle Zeichen entfernt und die weiter
 links stehenden Zeichen nachgezogen.
 
-Mit der "Ins"-Taste wird auf Einfgen umgeschaltet; es erscheint
+Mit der "Ins"-Taste wird auf EinfÃ¼gen umgeschaltet; es erscheint
 INSERT in der letzten Zeile.  Zeichen werden an der aktuellen
-Position eingefgt, der Cursor um ein Zeichen nach rechts gesetzt.
+Position eingefÃ¼gt, der Cursor um ein Zeichen nach rechts gesetzt.
 Ist die Zeile zu lang, so gehen die
 letzten Zeichen der Zeile geht verloren.
-Ausschalten durch nochmaliges Bet„tigen der "Ins"-Taste oder
-Verlassen der Zeile. (Der INSERT-Modus ist also recht flchtig.)
+Ausschalten durch nochmaliges BetÃ¤tigen der "Ins"-Taste oder
+Verlassen der Zeile. (Der INSERT-Modus ist also recht flÃ¼chtig.)
 
 Die "Tab"- und "BTab"-Tasten (Pfeil nach rechts bzw. links mit
 senkrechtem Strich an der Pfeilspitze) positionieren auf die
 Spalten 1, 9, 17 usw., also auf Tabulatoren im 8-er Raster.
-Enth„lt die erste Zeile der Datei ab Spalte 10 START,
+EnthÃ¤lt die erste Zeile der Datei ab Spalte 10 START,
 so werden die Tabulatoren auf 1, 10, 16, 36 und 71 gesetzt
 (Assembler der 8864).
 
@@ -162,12 +162,12 @@ Am Dateiende kann einfach eingegeben werden, die Zeilen werden
 jeweils eingerichtet, wie man an der Zeilennummer erkennen kann,
 die dann erscheint.
 
-Alle brigen Funktionen werden durch die "Esc"-Taste angew„hlt.
+Alle Ã¼brigen Funktionen werden durch die "Esc"-Taste angewÃ¤hlt.
 Damit geht der Cursor in derselben Zeile ganz nach links.
 Jetzt kann ein Kommando eingegeben werden:
 (z.Z. bestimmt der erste Buchstabe das Kommando;
-ist das Kommando l„nger als 2 Zeichen, wird einfach ber den Text
-geschrieben, ohne daá der Text ver„ndert wird.)
+ist das Kommando lÃ¤nger als 2 Zeichen, wird einfach Ã¼ber den Text
+geschrieben, ohne daÃŸ der Text verÃ¤ndert wird.)
 .VL 4
 .LI 1234
 .br
@@ -175,20 +175,20 @@ Wird eine Zahl eingegeben, so wird auf diese Zeile
 positioniert.
 Wenn es die Zeile nicht gibt, so wird auf die Zeile
 davor positioniert.
-Die so ausgew„hlte Zeile wird die erste Zeile im
+Die so ausgewÃ¤hlte Zeile wird die erste Zeile im
 Sichtfenster.
 
 .LI end
 .br
 Ende der Bearbeitung.
 .br
-Wurden Žnderungen angebracht, so wird die Datei zurck-
+Wurden Ã„nderungen angebracht, so wird die Datei zurÃ¼ck-
 geschrieben.
 Es wird eine Backup-Datei angelegt.
-Beim Abspeichern werden fhrende Blanks soweit m”glich
+Beim Abspeichern werden fÃ¼hrende Blanks soweit mÃ¶glich
 durch Tabulator-Zeichen ersetzt. Nach dem Editieren einer
 Datei sind Tabulatoren nur noch am Anfang einer Zeile vorhanden.
-Auáerdem werden Blanks am Zeilenende entfernt, so daá in der
+AuÃŸerdem werden Blanks am Zeilenende entfernt, so daÃŸ in der
 Datei hinterher am Zeilenende stets Nicht-Blanks sind.
 
 .LI save
@@ -199,68 +199,68 @@ kann fortgesetzt werden.
 .LI quit
 .br
 Die Bearbeitung wird beendet, ohne dass die Aenderungen
-zurckgeschrieben werden.
+zurÃ¼ckgeschrieben werden.
 Wurden Aenderungen gemacht, so wird vorsichtshalber mit
-"Abort ?" eine Best„tigung verlangt.
+"Abort ?" eine BestÃ¤tigung verlangt.
 
 .LI find
 .br
 In der Statuszeile wird eine Zeichenkette erfragt.
 Die Zeichenkette des vorigen Suchens wird angezeigt.
-Wird mit ESC ausgel”st, so wird nicht gesucht.
+Wird mit ESC ausgelÃ¶st, so wird nicht gesucht.
 Wird auf der ersten Zeicheposition des Suchstrings
-ausgel”st (also ohne Žnderungen), so wird nochmal
+ausgelÃ¶st (also ohne Ã„nderungen), so wird nochmal
 nach derselben Zeichenkette gesucht.
-Ansonsten z„hlt die Zeichenkette immer nur bis zur
+Ansonsten zÃ¤hlt die Zeichenkette immer nur bis zur
 Cursorposition.
 In der aktuellen Zeile wird nie gesucht.
-Ausl”sen mit F8 sucht rckw„rts,
-mit CR oder F10 vorw„rts.
+AuslÃ¶sen mit F8 sucht rÃ¼ckwÃ¤rts,
+mit CR oder F10 vorwÃ¤rts.
 
 .LI k (wie cut oder split)
 .br
 Die Zeile wird vor dem Cursor zerteilt und der Rest
-der Zeile gibt eine neue, eingefgte Zeile.
+der Zeile gibt eine neue, eingefÃ¼gte Zeile.
 
 .LI join
 .br
-Die folgende Zeile wird an die aktuelle Zeile angeh„ngt
-und danach gel”scht.
+Die folgende Zeile wird an die aktuelle Zeile angehÃ¤ngt
+und danach gelÃ¶scht.
 
 .LI read
 .br
 In der Statuszeile wird ein Dateiname wie bei "find"
-erfragt. Die Datei wird vollst„ndig hinter die aktuelle
+erfragt. Die Datei wird vollstÃ¤ndig hinter die aktuelle
 Zeile eingelesen.
 
 .LI dnn
 .br
-Der Buchstabe "d" gefolgt von einer Zahl l”scht ab der
+Der Buchstabe "d" gefolgt von einer Zahl lÃ¶scht ab der
 aktuellen Zeile ebensoviele Zeilen.
-Folgt keine Zahl, so wird eine Zeile gel”scht.
+Folgt keine Zahl, so wird eine Zeile gelÃ¶scht.
 
 .LI inn
 .br
-Der Buchstabe "i" gefolgt von einer Zahl fgt
+Der Buchstabe "i" gefolgt von einer Zahl fÃ¼gt
 hinter der aktuellen Zeile, maximal bis
 Schirmende, leere Platzhalter-Zeilen ein. Ohne Zahl wird
-eine Zeile eingefgt. Die Platzhalter-Zeilen werden ein-
-gefgt, wenn sie benutzt sind. Sie erhalten dann
+eine Zeile eingefÃ¼gt. Die Platzhalter-Zeilen werden ein-
+gefÃ¼gt, wenn sie benutzt sind. Sie erhalten dann
 Bruchnummern. Platzhalter-Zeilen haben keinen senkrechten
 Strich in der ersten Spalte des Bildschirms und als Zeilennummer
-die Nummer des letzten Platzhalters davor mit angeh„ngtem '+'.
-Drei eingefgte Zeilen nach der 43. erhalten so die Nummern
-43.1, 43.2 und 43.3. Die ursprngliche Benummerung wird
-also beibehalten. Wird zwischen einfgte Zeilen eingefgt,
+die Nummer des letzten Platzhalters davor mit angehÃ¤ngtem '+'.
+Drei eingefÃ¼gte Zeilen nach der 43. erhalten so die Nummern
+43.1, 43.2 und 43.3. Die ursprÃ¼ngliche Benummerung wird
+also beibehalten. Wird zwischen einfÃ¼gte Zeilen eingefÃ¼gt,
 so werden die Bruchteile renummeriert, soweit notwendig.
-Da in der Datei auf Platte keine Zeilennummern gefhrt werden,
+Da in der Datei auf Platte keine Zeilennummern gefÃ¼hrt werden,
 sondern die links angezeigten Zeilennummern einfach die Nummern
 der Zeilen sind, wirkt Abspeichern und neu Editieren wie
 komplett renummerieren.
 
 .LI onn
 .br
-o funktioniert wie insert, nur daá vor der aktuellen Zeile
+o funktioniert wie insert, nur daÃŸ vor der aktuellen Zeile
 Platz frei gemacht wird.
 
 .LI tnn
@@ -290,7 +290,7 @@ Blockkommandos
 .ce off
 .sp 3
 
-Um das l„stige und fehleranf„llige Abz„hlen von Zeilen zu vermeiden,
+Um das lÃ¤stige und fehleranfÃ¤llige AbzÃ¤hlen von Zeilen zu vermeiden,
 kann der zu bearbeitende Teil in Blockkommandos eingefasst werden.
 Dazu wird der Kommandobuchstabe verdoppelt.
 
@@ -298,24 +298,24 @@ Beispiel:
 .in 3
 In Zeile 5 und Zeile 9 wird (durch ESC) in dem Zeilennummernfeld
 "dd" eingegeben. Mit der zweiten Eingabe von "dd" werden die
-Zeilen 5 bis 9 gel”scht.
+Zeilen 5 bis 9 gelÃ¶scht.
 .in -3
 
 Der aktuelle Zustand der Zeilenkommandos wird in der Statuszeile
 notiert. Ein angefangenes Zeilenkommando wird durch ein Blank in
-der Zeilennummer gel”scht.
+der Zeilennummer gelÃ¶scht.
 
 Es gibt folgende Zeilenkommandos:
 
-dd   L”schen
+dd   LÃ¶schen
 
-mm   Move, d.h. kopieren mit l”schen
+mm   Move, d.h. kopieren mit lÃ¶schen
 
 cc   Copy, also kopieren
 
 vv   Vary, also ersetzen
 
-Fr Move und Copy muss zus„tzlich noch die Stelle markiert werden,
+FÃ¼r Move und Copy muss zusÃ¤tzlich noch die Stelle markiert werden,
 an die kopiert werden soll.
 Dies geschieht durch die Zeilenkommandos
 
@@ -329,7 +329,7 @@ benutzt werden, so dass "m3" die bezogene und die beiden nachfolgenden
 Zeilen verschiebt.
 
 Damit bei Blockkommandos besser positioniert werden kann, bleiben die
-Cursortasten im Zeilennummernfeld. Nur CR geht zurck zum Editieren
+Cursortasten im Zeilennummernfeld. Nur CR geht zurÃ¼ck zum Editieren
 des Textes.
 
 .bp
@@ -350,7 +350,7 @@ Version $1:
 .LI -
 Steuerzeichen: Werden beim Ausgeben invertiert dargestellt,
 z.B. CTL-L durch ein invertiertes L.
-Sie k”nnen mit F6 als Pr„fix-Taste auch eingegeben werden.
+Sie kÃ¶nnen mit F6 als PrÃ¤fix-Taste auch eingegeben werden.
 .LE
 
 .VER 3.0
@@ -358,24 +358,24 @@ Sie k”nnen mit F6 als Pr„fix-Taste auch eingegeben werden.
 
 .LI -
 Find-Kommando: ESC-f gibt eine Anfrage nach der zu suchenden
-Zeichenkette in der Statuszeile. CR und F9 suchen vorw„rts,
-F7 sucht rckw„rts. Die aktuelle Zeile wird nicht betrachtet.
-F7 und F9 k”nnen dann zum Weitersuchen ohne ESC in die
+Zeichenkette in der Statuszeile. CR und F9 suchen vorwÃ¤rts,
+F7 sucht rÃ¼ckwÃ¤rts. Die aktuelle Zeile wird nicht betrachtet.
+F7 und F9 kÃ¶nnen dann zum Weitersuchen ohne ESC in die
 Zeilennummern verwendet werden, wenn sich der Suchtext nicht
-„ndert.
+Ã¤ndert.
 .LE
 
 .VER 3.6
 .VL 2
 
 .LI -
-Zeilen l„nger als 72 Zeichen k”nnen jetzt behandelt werden.
+Zeilen lÃ¤nger als 72 Zeichen kÃ¶nnen jetzt behandelt werden.
 Zum einen geht keine Information mehr verloren;
 zum anderen kann mit F3 und F4 oder CTL-links und CTL-rechts
 das Sichtfenster verschoben werden.
 
 .LI -
-DD oder MM in der letzten Zeile fhrt nicht mehr zur
+DD oder MM in der letzten Zeile fÃ¼hrt nicht mehr zur
 zur Endlosschleife.
 .LE
 
@@ -389,7 +389,7 @@ Wenn START in Spalte 10, 886x Assembler Tabulatoren.
 Spaltenlineal in der Kommandozeile.
 
 .LI -
-r-Kommando zum Einfgen einer Datei hinter der
+r-Kommando zum EinfÃ¼gen einer Datei hinter der
 aktuellen Zeile.
 
 .LI -
@@ -419,14 +419,14 @@ mehr vorgenommen.
 .VER 4.7
 .VL 2
 .LI -
-Backup-Namen ver„ndert; es wird nur noch umbenannt und dann neu
+Backup-Namen verÃ¤ndert; es wird nur noch umbenannt und dann neu
 geschrieben.
 
 .LI -
 split und join.
 
 .LI -
-open als Erg„nzung zu insert fr die Benutzer des RAND-Editors.
+open als ErgÃ¤nzung zu insert fÃ¼r die Benutzer des RAND-Editors.
 
 .LE
 .VER 4.15
@@ -450,7 +450,7 @@ Anpassung auf TCC
 
 Neuer Parameter +nn: positioniert auf Zeile
 
-Modulus fr Zeilenberechnung durch Rechenmakros ersetzt
+Modulus fÃ¼r Zeilenberechnung durch Rechenmakros ersetzt
 
 .LE
 .sp 5
@@ -462,15 +462,15 @@ noch vorhandene Fehler oder Probleme:
 .fi
 .ce off
 
-Vor der 1. Zeile kann nicht eingefgt werden; dazu muá die
+Vor der 1. Zeile kann nicht eingefÃ¼gt werden; dazu muÃŸ die
 1. Zeile hinter sich kopiert werden und dann als neue Zeile
 beschrieben werden.
 
 CTL-C ist nicht abgefangen (insb. bei BREAK ON).
 Sollte nicht verwendet werden, da die Seitenumschaltung
-zurck dann nicht erfolgt.
+zurÃ¼ck dann nicht erfolgt.
 
-5stellige oder l„ngere Zeilennummern fhren zur Positionierung
+5stellige oder lÃ¤ngere Zeilennummern fÃ¼hren zur Positionierung
 auf die erste statt die letzte Zeile.
 
 .sp 5
@@ -495,11 +495,11 @@ unbedingt noetig.
 Damit koennte dann auch STDIN verwendet werden und gv als viewer guenstig
 sein.
 
->>, <<  Blockkommandos zum Ein- und Ausrcken
+>>, <<  Blockkommandos zum Ein- und AusrÃ¼cken
 
 WRITE-Kommando zum Wegschreiben eines Teils
 
-Rest einer Zeile l”schen.
+Rest einer Zeile lÃ¶schen.
 (mit split und delete zu erreichen)
 
 Print als Block-Kommando

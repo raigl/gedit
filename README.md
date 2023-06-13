@@ -10,4 +10,6 @@ There is a command column at the left hand side.
 
 Can be used with only one function key, e.g ESC
  
-Main branch does not (yet) support wide characters.
+Does not yet support typing non-ASCII-characters, 
+but displays Unicode correctly, yet uneditable.
+

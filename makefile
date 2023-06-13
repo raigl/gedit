@@ -9,7 +9,8 @@ DOCFILE =  edit.doc
 EDBACK  =  *~
 OBJECTS =  editm.o editu.o editf.o editl.o edits.o editt.o editv.o
 MODEL   =
-RELVER  =  5.4a
+RELVER  =  5.5a
+# CFLAGS  =  -ansi $(MODEL) -DLINUX -DCURSES -g -DEXPAND_TABS
 CFLAGS  =  -ansi $(MODEL) -DLINUX -DCURSES -g
 LDLIBS  =  -lncursesw
 

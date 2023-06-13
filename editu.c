@@ -753,6 +753,7 @@ void showruler()
 	int i;
 	curpos(CL,2);
 	for (i=lmarg; i<lmarg+cols-2-1; ++i)
+	  if (ruler[i] != 0)
 	    putsc(ruler[i]);
 }
 
