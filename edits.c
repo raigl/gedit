@@ -67,7 +67,7 @@ int maxlen, taboff;
 	    } else {
 	    	if (p != q)
 		    putnstr(q, p-q);
-		putnstr("\342\200\244", 3);
+		putnstr("\313\253", 2);
 		while ((++taboff % tabs) != 0)
 		    putnstr("\342\200\244", 3);
 		++p;

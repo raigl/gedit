@@ -200,7 +200,7 @@ void carret()
 
 	/* find first nonblank/tab  in line */
 	for (i=0; (*txt == ' ') || (*txt == TAB); i++) {
-		if (*txt == TAB && adr[zeile]==0) i+=7;
+		if (*txt == TAB && adr[zeile]==0) i+=tabs-1;
 		txt++;
 		}
 	/* the line might contain blanks only, treat as empty */
