@@ -53,7 +53,7 @@ char *args;
 		   /* -t x: set tabstops each x-th column */
 	       case 't':  tabs = atoi(args);
 			  return;
-		   /* -u: untab, i.e. repace tabs by blanks */
+		   /* -u: untab, i.e. replace tabs by blanks when saving */
 	       case 'u':  untab = 1;
 			  return;
 	       default:   parmerr();

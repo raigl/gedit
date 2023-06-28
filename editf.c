@@ -1,5 +1,6 @@
 /*
 editf.c   File manager for Editor
+// vi ts=4
 */
 
 #include "edit.h"
@@ -14,6 +15,8 @@ editf.c   File manager for Editor
 #endif
 
 extern int tabs;    /* tab stops */
+extern bool untab;
+extern char ruler[]; 
 
 FILE *infile, *outfile, *fopen();
 
@@ -27,7 +30,10 @@ char *text;
 	int len, ind;
 	char c, *p;
 	len = slen(text);
-#ifdef EXPAND_TABS
+	ind = 0;
+	p = text;
+#ifdef SPACES_TO_TABS
+	/* replace leading spaces by tabs */
 	/* length without trailing blanks */
 	p = text + len;
 	while ( len > 0 && *(--p)==' ')
@@ -40,7 +46,6 @@ char *text;
 	    else
 		return SUCC;
 	}
-
 	/* number of leading spaces */
 	p = text;
 	ind = 0;
@@ -55,9 +60,24 @@ char *text;
 	for (i = ind % tabs; i > 0; --i)
 	     putc(' ', outfile);
 #else
-	ind = 0;
+	if (untab) {
+	    /* output leading spaces and replace tabs by spaces*/
+	    p = text;
+	    ind = 0;
+	    while (p < text+len && (*p == '\t' || *p == ' ')) {
+		if (*p == '\t')  {
+		    do	{
+			putc(' ', outfile);
+		    }
+		    while (ruler[++ind] != '*');
+		} else 
+		    putc(' ', outfile);
+		++p;	    
+	    }
+	    ind = p - text;
+	}
 #endif
-	/* now put real infomation characters */
+	/* now put rest of line */
 	for (p = text+ind, i = len - ind; i > 0; --i)
 	     putc(*p++, outfile);
 	putc('\n', outfile);
@@ -67,6 +87,14 @@ char *text;
 	    return SUCC;
 }
 
+check_untab(p)
+char *p;
+{    /* if the line starts with a blank and is not entirely blank,
+	set untab option */
+	if (*p == ' ') 
+	    if (strspn(p, " ") != strlen(p))
+		untab = 1;
+}
 /*
    Get the next line from the input file to the buffer.
    If the buffer size is exceeded, it is not truncated,
@@ -94,15 +122,18 @@ int len;
 		case '\n':
 		case EOF:
 		     *p = '\0';
+		     check_untab(lne);
 		     if (col==1) return(c);
 		     return '\n';
-#ifdef EXPAND_TABS
+		/* replace tabs in input file by spaces 
 		case '\t':
-		     do
-			 *(p++) = ' ';
-		     while ((col++) % tabs);
-		     break;
-#endif
+			if (untab) {
+				do
+			 		*(p++) = ' ';
+		     	while ((col++) % tabs);
+			    break;
+			}
+		*/
 		default:
 		     *(p++) = c;
 		     ++col;
@@ -110,6 +141,7 @@ int len;
 	    }
 	}
 	*p = '\0';
+	check_untab(lne);
 	return( *p );
 }
 

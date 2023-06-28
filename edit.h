@@ -121,12 +121,12 @@ extern bool fetch();
 
 
 #define Cmd   0x01      /* ^A */
-#define ScChg 0x02	/* ^B */
-#define Cancel 0x03     /* ^C */
+#define Col1  0x02	    /* ^B */
+#define DelC  0x03      /* ^C */
 #define Done  0x04      /* ^D */
-#define uSrch 0x05	/* ^E */
+#define uSrch 0x05	    /* ^E */
 #define Find  0x06      /* ^F */
-#define dSrch 0x07 	/* ^G */
+#define dSrch 0x07 	    /* ^G */
 #define BS    0x08      /* ^H */
 #define TAB   '\t'      /* ^I */
 #define LF    '\n'      /* ^J */
@@ -143,7 +143,7 @@ extern bool fetch();
 #define PgUp  0x15      /* ^U */
 #define PgDn  0x16      /* ^V */
 #define INS   0x17      /* ^W */
-#define DelC  0x18      /* ^X */
+#define Cancel 0x18     /* ^X */
 #define Wlft  0x19      /* ^Y */
 #define Wrght 0x1A      /* ^Z */
 #define ESC   0x1B      /* ^[ */
@@ -154,7 +154,7 @@ extern bool fetch();
 
 #define DEL   0x07F
 
-#define MAXLINES 100    /* longer screens are not fully used */
+#define MAXLINES 256    /* longer screens are not fully used */
 
 #ifndef CURSES
 extern int COLS, LINES; /* similar to CURSES, well. */

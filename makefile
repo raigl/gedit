@@ -9,19 +9,19 @@ DOCFILE =  edit.doc
 EDBACK  =  *~
 OBJECTS =  editm.o editu.o editf.o editl.o edits.o editt.o editv.o
 MODEL   =
-RELVER  =  5.5c
-# CFLAGS  =  -ansi $(MODEL) -DLINUX -DCURSES -g -DEXPAND_TABS
+RELVER  =  5.5d
 CFLAGS  =  -ansi $(MODEL) -DLINUX -DCURSES -g
 LDLIBS  =  -lncursesw
+
+ 
+$(BIN): $(OBJECTS)
+	cc $(CFLAGS) -o $(BIN) $(OBJECTS) $(LDLIBS)
 
 tq:     tq.c
 	cc -o tq tq.c $(LDLIBS)
 
 ct:     ct.c
 	cc -g -o ct ct.c $(LDLIBS)
-
-$(BIN): $(OBJECTS)
-	cc $(CFLAGS) -o $(BIN) $(OBJECTS) $(LDLIBS)
 
 all:    $(BIN) install doc clean
 

@@ -14,6 +14,7 @@ extern char ruler[];    /* Spaltenlineal mit Tabulatoren */
 extern int oldpage;
 extern int thispage;
 extern int tabs;
+extern bool untab;
 #ifdef MSDOS
 int insflg = 0;         /* Start in overwrite mode */
 #else
@@ -67,9 +68,10 @@ int maxlen, taboff;
 	    } else {
 	    	if (p != q)
 		    putnstr(q, p-q);
-		putnstr("\313\253", 2);
+		
 		while ((++taboff % tabs) != 0)
-		    putnstr("\342\200\244", 3);
+		    putnstr("\342\200\247", 3);
+		putnstr("\342\200\247", 3);
 		++p;
 		q = p;
 	    }
@@ -440,19 +442,26 @@ int *cursor;
 				       cols-(col+*cursor),
 				       taboff+tabbedlen(text, *cursor, taboff));
 				break;
-#ifdef EXPAND_TABS
+/*				
 			case    TAB:
-				do
-				{
-					if      ((*cursor)>=len)
-					{
-						*cursor=0;
-						return(CuDn);
-					}
-				}
-				while (ruler[++(*cursor)] != '*');
-				break;
-#endif
+			    if (insflg)
+			    {
+				chgflg = TRUE;
+				for (i=strlen(text);--i>*cursor;)
+				    text[i]=text[i-1];
+				text[*cursor]=c;
+				puttxt(&text[*cursor],
+				       cols-(col+*cursor),
+				       taboff+tabbedlen(text, *cursor, taboff));
+			    }
+			    else
+			    {
+			       putsc(c);
+			       chgflg |= (text[*cursor] != c);
+			       text[*cursor]=c;
+			    }
+			    break;
+*/			    
 			case    BTAB:
 				do
 				{
@@ -475,6 +484,7 @@ int *cursor;
 					return(CuDn);
 				}
 				break;
+/*
 			case    ScChg:
 #ifdef IBMBIOS
 				newpage(oldpage);
@@ -483,8 +493,9 @@ int *cursor;
 				newpage(thispage);
 #else
 				reshow(L1, LL);
-#endif
 				break;
+#endif
+*/
 			case    CuUp:
 			case    CuDn:
 			case    CuHm:
@@ -504,6 +515,7 @@ int *cursor;
 			case    Find:
 			case    ESC:
 			case    CR:
+			case 	Col1:
 				return(c);
 			/*      break;  unreached code, compiler complain */
 			case    0xff:

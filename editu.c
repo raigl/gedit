@@ -1072,8 +1072,10 @@ int startline;
 	poslne(0L);
 	updflg = FALSE;
 	p = lnetxt();
+	/* ensure there is always a tabmark */
 	for (i=1; i<MAXLINE+1; ++i)
 	    ruler[i-1] = tabmark(i);
+/* special arrangement for Nixdorf 8860 assember code *
 	if ( (slen(p)>9) && (strncmp(p+9,"START",5) == 0) )
 	{
 	    ruler[0] = '*';
@@ -1083,8 +1085,9 @@ int startline;
 	    ruler[70] = '*';
 	}
 	else
-	    for (i=0; i<MAXLINE; i += tabs)
-		ruler[i] = '*';
+*/
+	for (i=0; i<MAXLINE; i += tabs)
+	    ruler[i] = '*';
 
 	if (startline > 1) {
 	    for (i=L1; i<=LL; ++i)
@@ -1103,7 +1106,7 @@ int startline;
 	{
 	    for (i=zeile; i>0 && adr[i]==0; --i)
 		 ;
-	    curpos(CL, cols-13);
+	    curpos(CL, cols-20);
 	    prtloc(adr[i]);
 	    if (adr[zeile] == 0)
 		putsc('+');
@@ -1285,6 +1288,10 @@ char ctl;
 		 break;
 	    case Find:
 		 findwrd();
+		 break;
+	    case Col1:
+		 spalte=0;
+		 fprintf(stderr, "Col1");
 		 break;
 	    default:
 		 spalte=0;
