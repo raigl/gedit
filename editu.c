@@ -18,6 +18,7 @@ int lmarg = 0;          /* left window margin */
 bool chgflg;            /* change result from tget */
 bool updflg;            /* raised if any changes in file */
 extern bool insflg;     /* raised if in insert mode */
+extern bool untab;
 bool drawflg;
 char prevkey;
 
@@ -69,7 +70,10 @@ long loc;
 	    putstr("*");
 	else
 	    putstr(" ");
-	
+	if (untab)
+	    putstr("U");
+	else
+	    putstr(" ");	
 	y = intloc(loc);
 	uprintf("%5u", y);
 	y = fracloc(loc);
@@ -1045,6 +1049,10 @@ int linecmd()
 		case 'z':
 			drawflg = !drawflg;
 			break;
+		case 'u':
+			untab = !untab;
+			break;
+
 		case 0:
 			break;
 		default:
@@ -1075,17 +1083,7 @@ int startline;
 	/* ensure there is always a tabmark */
 	for (i=1; i<MAXLINE+1; ++i)
 	    ruler[i-1] = tabmark(i);
-/* special arrangement for Nixdorf 8860 assember code *
-	if ( (slen(p)>9) && (strncmp(p+9,"START",5) == 0) )
-	{
-	    ruler[0] = '*';
-	    ruler[9] = '*';
-	    ruler[15] = '*';
-	    ruler[35] = '*';
-	    ruler[70] = '*';
-	}
-	else
-*/
+
 	for (i=0; i<MAXLINE; i += tabs)
 	    ruler[i] = '*';
 
@@ -1309,7 +1307,7 @@ void *str;
 	curpos(CL, MC);
 	clreoln();
 	showruler(); /* positions cursor itself to the left */
-	curpos(CL,cols-1-strlen(id)-2-strlen(fname)-1-1-5-12-1);
+	curpos(CL,cols-1-strlen(id)-2-strlen(fname)-1-1-5-12-2);
 	putstr(" ");
 	putstr(id);
 	putstr(" [");
